@@ -8,6 +8,7 @@
   <link rel="stylesheet" href="style.css">
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
 </head>
+  <style></style>
 <body>
 
 <!-- NAVBAR -->
@@ -106,6 +107,20 @@ I believe good design is not just about how it looks, but how it works. I’m co
   <p>© 2025 Shalin P. All Rights Reserved.</p>
 </footer>
 
-<script src="script.js"></script>
+<script >const elements = document.querySelectorAll('.section, .hero-text, .hero-visual');
+
+const observer = new IntersectionObserver(entries => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('show');
+    }
+  });
+}, { threshold: 0.15 });
+
+elements.forEach(el => {
+  el.classList.add('hidden');
+  observer.observe(el);
+});</script>
 </body>
 </html>
+
